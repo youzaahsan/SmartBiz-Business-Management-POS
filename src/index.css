@@ -1,0 +1,249 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* Warm Beige / Sand / Cream Background Texture from reference screenshot */
+  .bg-warm-sand {
+    background-color: #eae5dc;
+    background-image:
+      radial-gradient(at 0% 0%, #f3efe7 0px, transparent 55%),
+      radial-gradient(at 100% 0%, #ebe6dc 0px, transparent 50%),
+      radial-gradient(at 100% 100%, #e5dfd4 0px, transparent 55%),
+      radial-gradient(at 0% 100%, #eee9e0 0px, transparent 50%),
+      linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(225, 218, 206, 0.2) 100%);
+    background-attachment: fixed;
+  }
+
+  /* Warm Ivory Neumorphic & Sculpted Clay Cards */
+  .clay-card {
+    background-color: #f7f4ee;
+    background-image: linear-gradient(180deg, #fbf9f4 0%, #f5f1ea 100%);
+    border: 1px solid rgba(225, 217, 204, 0.95);
+    box-shadow:
+      0 8px 24px -4px rgba(120, 105, 90, 0.12),
+      0 2px 6px -1px rgba(120, 105, 90, 0.08),
+      inset 0 1px 1px 0 rgba(255, 255, 255, 0.95),
+      inset 0 -1px 2px 0 rgba(150, 135, 120, 0.1);
+  }
+
+  /* Deckled paper organic edge accents mimicking reference image */
+  .deckled-card {
+    position: relative;
+    border-radius: 1.75rem;
+  }
+
+  .deckled-card::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 8%;
+    right: 8%;
+    height: 3px;
+    background: radial-gradient(ellipse at bottom, rgba(160, 140, 120, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .clay-card-hover {
+    transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.24s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.24s ease;
+  }
+
+  .clay-card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 14px 30px -6px rgba(115, 100, 85, 0.16),
+      0 4px 10px -2px rgba(115, 100, 85, 0.1),
+      inset 0 1px 1px 0 rgba(255, 255, 255, 1);
+    border-color: rgba(215, 205, 190, 1);
+  }
+
+  /* Soft debossed inset container (Search bar, inputs, sunken icons) */
+  .clay-inset {
+    background-color: #ede8df;
+    border: 1px solid rgba(220, 212, 198, 0.9);
+    box-shadow:
+      inset 2px 2px 5px rgba(135, 120, 105, 0.14),
+      inset -2px -2px 5px rgba(255, 255, 255, 0.9);
+  }
+
+  /* Metallic rivet / screw head found on quick action cards */
+  .clay-rivet {
+    width: 14px;
+    height: 14px;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, #d3ccc0 0%, #ede8de 50%, #b8b0a2 100%);
+    border: 1px solid rgba(160, 150, 138, 0.5);
+    box-shadow:
+      0 1px 2px rgba(90, 80, 70, 0.2),
+      inset 0 1px 1px rgba(255, 255, 255, 0.8),
+      inset 0 -1px 1px rgba(100, 90, 80, 0.3);
+    position: relative;
+  }
+
+  .clay-rivet::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    right: 20%;
+    height: 1px;
+    background: rgba(90, 80, 70, 0.4);
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  /* Neumorphic pressable buttons */
+  .clay-button {
+    background: linear-gradient(180deg, #fbf9f4 0%, #f4efe7 100%);
+    border: 1px solid rgba(222, 214, 202, 0.95);
+    box-shadow:
+      0 3px 8px rgba(130, 115, 100, 0.12),
+      inset 0 1px 1px rgba(255, 255, 255, 0.95);
+    transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .clay-button:hover {
+    transform: translateY(-1.5px);
+    box-shadow:
+      0 6px 14px rgba(130, 115, 100, 0.16),
+      inset 0 1px 1px rgba(255, 255, 255, 1);
+    border-color: rgba(210, 200, 185, 1);
+  }
+
+  .clay-button:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow:
+      inset 1px 1px 3px rgba(120, 105, 90, 0.15),
+      0 1px 2px rgba(120, 105, 90, 0.05);
+  }
+
+  /* Debossed pill badge */
+  .clay-badge {
+    background: #ede8df;
+    border: 1px solid rgba(218, 210, 196, 0.8);
+    box-shadow:
+      inset 1px 1px 2px rgba(130, 115, 100, 0.1),
+      inset -1px -1px 2px rgba(255, 255, 255, 0.7);
+  }
+
+  /* Skeleton Shimmer in warm sand tones */
+  .skeleton-shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(235, 230, 222, 0.8) 0%,
+      rgba(250, 247, 242, 0.95) 50%,
+      rgba(235, 230, 222, 0.8) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.8s infinite ease-in-out;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes drawLine {
+  from {
+    stroke-dashoffset: 2000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes spinGearSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.anim-fade-in {
+  animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-fade-up {
+  animation: fadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.anim-slide-down {
+  animation: slideDown 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.anim-slide-left {
+  animation: slideLeft 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.anim-slide-right {
+  animation: slideRight 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.delay-50  { animation-delay: 50ms; }
+.delay-100 { animation-delay: 100ms; }
+.delay-150 { animation-delay: 150ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-250 { animation-delay: 250ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-350 { animation-delay: 350ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-450 { animation-delay: 450ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Accessible prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

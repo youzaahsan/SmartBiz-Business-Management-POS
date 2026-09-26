@@ -1,0 +1,6 @@
+{
+  "name": "SMARTBIZ — Business Management & POS",
+  "description": "Smart Calculator, POS, Billing, Inventory, Customer Ledger, Credit, Supplier Management, Purchases, Returns, Expenses, Profit Analytics and Reports.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
